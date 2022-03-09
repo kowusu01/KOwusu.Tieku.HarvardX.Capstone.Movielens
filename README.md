@@ -34,8 +34,8 @@ git clone https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens
 4. select all and Run   
 
 Executing the scripts attached to the submission  
-If you decide not to clone the repo and instead jut to run file attached in the submission, follow the steps:  
-1. downlad the attached file to your preferred location  
+If you decide not to clone the repo and instead juSt to run file attached in the submission, follow the steps:  
+1. download the attached file to your preferred location  
 2. in the same location where you copied the file, create a folder called rda, the script requires it  
 3. go to RStudio and navigate to your folder  
 4. open the movielens.R script  
