@@ -1,4 +1,5 @@
-# KOwusu.Tieku.HarvardX.Capstone.Movielens
+# Movie Recommendation using Machine Learning
+## KOwusu.Tieku.HarvardX.Capstone.Movielens
 
 ![alt text](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/splash-full.png?raw=true)
 
@@ -6,7 +7,10 @@
 ### Introduction 
 This project was submitted as part of a requirement for HarvardX - PH125.9x -  Professional Certificate in Data Science program offered by Harvard University via online (edx.com).  PH125.9x is the last cource in a nine-part program leading to the certificate.
 
-### Executing the Scripts
+
+Under this repo, you will find the entire code (R script), the Rmd file (for generating a reproducible report), and finally the pdf report detailing the entire process, approach, and results.
+
+### Executing the Project
 
 The easiest way to execute the script is to clone the repo and use RStudio. When you clone the repo, you will get the entire folder structure needed to execute the scripts.
 
