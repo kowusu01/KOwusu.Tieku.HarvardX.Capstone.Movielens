@@ -512,21 +512,8 @@ saveRDS(test_set, "rda/test_set.rda")
 rm(edx, validation)
 
 
-# *************************************************************
-# start from this checkpoint
-#train_set <- readRDS("rda/train_set.rda")
-#test_set <- readRDS("rda/test_set.rda")
-#validation <- readRDS("rda/validation.rda")
-# *************************************************************
-
-# for the base model, we won't need the individual genres, exclude them
-#train_set <- train_set[, 1:6]
-#test_set <- test_set[, 1:6]
-
 train_set <- train_set %>% select(userId, movieId, rating)
 test_set <- test_set  %>% select(userId, movieId, rating)
-
-
 
 #############################################################################
 # create the base model
@@ -560,12 +547,10 @@ paste("training started: ", Sys.time())
 
 # 1. create 10 sets of training/testing - manual 10-fold cross validation sets
 CV.FOLDS   <- 10
-CV.FOLDS   <- 3
 indexes <- lapply(1:CV.FOLDS, FUN=function(x){fnCreateIndexes(train_set)})
 
 # 2. create a list of lambdas to find best lambda from each cross validation train/test
 lambdas <- seq(1, 10, 0.1)
-lambdas <- seq(3, 5, 0.5)
 
 # 3. use sapply to execute a function that performs the entire train/test scenario
 (cv_rmse_list <- lapply(indexes, fnTrainAndTest, dataset=train_set, lambdas=lambdas))

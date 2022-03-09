@@ -37,50 +37,27 @@ knitr::opts_chunk$set(echo = FALSE)
   # for the amazing tables package by Hao Zhu
   if(!require(kableExtra)) install.packages("kableExtra", repos = "http://cran.us.r-project.org")
   
-  # for arranging objects like charts horizontally and vertically using arrangeGrob(), etc
-  if(!require(gridExtra)) install.packages("gridExtra", repos = "http://cran.us.r-project.org")
-
-  # for ROC curves  
-  if(!require(ROCR)) install.packages("ROCR", repos = "http://cran.us.r-project.org")
-
+  
   library(dplyr)
   library(ggplot2)
-  library(broom)
-  library(scales)
   library(RColorBrewer)
   library(tinytex)
   library(kableExtra)
   library(gridExtra)
-  library(ROCR)
+
   
-  
-  set.seed(2022)
-  
-  #######################################################################
-  ## functions
-  #######################################################################
-  fnSafePercent <- function(x, accuracy=1){
-    if(is.numeric(x)) 
-      return(percent(x, accuracy = accuracy))
-    else
-      return(x)
-  }
-  
+  set.seed(1, sample.kind="Rounding") 
   
   ################################################################################
   # read the data files needed for report. 
   # these should have been generated in the rda folder by running the model
   ################################################################################
-  # read the original 
-  
-  # from the report file perspective
+
   rda_path <- "rda"
 
   # load datasets
-  # this is the original training dataset
+  # this is the original edx dataset
   edx_original <- readRDS(file.path( rda_path, "edx.rda"))
-  
-  
 
 ```
 
@@ -123,7 +100,7 @@ knitr::opts_chunk$set(echo = FALSE)
     ## display.brewer.pal(7,"BrBG")
     ## brewer.pal(7,"BrBG")
     ##
-    # create my own color palete for long categorical list
+    # create my own color palette for long categorical list
     # pick similar color blind friendly from different palettes
     
     my_colors_20 <- c("#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "#FDB462", "#B3DE69", 
@@ -699,7 +676,7 @@ The following is a list of rmses returned from two of the cross validation itera
 ```
 
 
-``` {r cross_validation_results_chart, fig.height=3.5, fig.width=5}
+``` {r cross_validation_results_chart, fig.height=3.5, fig.width=6}
 
   readRDS(file.path(rda_path, "cv_rmse_list_chart.rda"))
 
@@ -747,12 +724,13 @@ In this analysis, I trained the model described in our course textbook by applyi
 
 \newpage
 
+## TECHNICAL INFORMATION
 ### Executing the Scripts
 
 Note:   
 This project was developed and tested in Windows.  It has not been tested under any other operating system.  
 
-The easiest way to execute the scriot is to clone the repo from github and use RStudio. When you close the repo, you will get the entire folder structure needed to execute the scripts.
+The easiest way to execute the script is to clone the repo from github and use RStudio. When you close the repo, you will get the entire folder structure needed to execute the scripts.
 
 Cloning from github  
 1. clone the repo   
@@ -763,7 +741,7 @@ git clone https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens
 
 Executing the scripts attached to the submission  
 If you decide not to clone the repo and instead jut to run file attached in the submission, follow the steps:  
-1. downlad the attached file to your preferred location  
+1. download the attached file to your preferred location  
 2. in the same location where you copied the file, create a folder called rda, the script requires it  
 3. go to RStudio and navigate to your folder  
 4. open the movielens.R script  
