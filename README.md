@@ -1,19 +1,20 @@
-# KOwusu.HarvardX.Capstone.Movielens
-
+# KOwusu.Tieku.HarvardX.Capstone.Movielens
 
 ![alt text](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/splash-full.png?raw=true)
 
 
-### executing the scripts
-The easiest way to execute the script is to clone the repo from github and use RStudio. When you clone the repo, you will get the entire folder structure needed to execute the scripts.
+### Introduction 
+This project was submitted as part of a requirement for HarvardX - PH125.9x -  Professional Certificate in Data Science program offered by Harvard University via online (edx.com).  PH125.9x is the last cource in a nine-part program leading to the certificate.
+
+### Executing the Scripts
+
+The easiest way to execute the script is to clone the repo and use RStudio. When you clone the repo, you will get the entire folder structure needed to execute the scripts.
 
 At minimum, you should have the following files shown below:
   
     - movielens.R - this is the main script for the analysis
     - report.Rmd - this is the source file for the report
     - rda - this folder contains generated or wrangled data files the report relies on 
- 
-### Executing the Scripts
 
 Note:   
 This project was developed and tested in Windows.  It has not been tested under any other operating system.  
