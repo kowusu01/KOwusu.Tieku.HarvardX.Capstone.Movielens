@@ -1,5 +1,7 @@
 # Movie Recommendation using Machine Learning
 ## KOwusu.Tieku.HarvardX.Capstone.Movielens
+### By Kwaku Owusu-Tieku
+Please submit comments to engineer.zkot2@gmail.com
 
 ![alt text](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/splash-full.png?raw=true)
 
