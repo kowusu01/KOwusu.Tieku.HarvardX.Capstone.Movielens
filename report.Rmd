@@ -715,7 +715,7 @@ A final model was fitted on the entire edx dataset to create the final user and 
   
 ```
 
-These biases (effects) were then applied to the validation set to make final predictions.T he final rmse on the validation is ```r final_model_info[3,2]```.
+These biases (effects) were then applied to the validation set to make final predictions. The final rmse on the validation is ```r final_model_info[3,2]```.
 
 \newpage
 
