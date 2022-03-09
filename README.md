@@ -7,7 +7,7 @@ Please submit comments to engineer.zkot2@gmail.com
 
 
 ### Introduction 
-This project was submitted as part of a requirement for HarvardX - PH125.9x -  Professional Certificate in Data Science program offered by Harvard University via online (edx.com).  PH125.9x is the last cource in a nine-part program leading to the certificate.
+This project was submitted as part of a requirement for HarvardX - PH125.9x -  Professional Certificate in Data Science program offered by Harvard University via online (edx.com).  PH125.9x is the last course in a nine-part program leading to the certificate.
 
 
 Under this repo, you will find the entire code (R script), the Rmd file (for generating a reproducible report), and finally the pdf report detailing the entire process, approach, and results.
