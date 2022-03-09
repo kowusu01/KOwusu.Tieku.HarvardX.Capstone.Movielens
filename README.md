@@ -1,4 +1,4 @@
-# Movie Recommendation using Machine Learning
+# Movie Recommendation as a Machine Learning Task
 ## KOwusu.Tieku.HarvardX.Capstone.Movielens
 ### By Kwaku Owusu-Tieku
 Please submit comments to engineer.zkot2@gmail.com
