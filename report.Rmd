@@ -699,7 +699,7 @@ The average of the ten best lambdas is  ```r  readRDS(file.path( rda_path, "best
   final_model_info <- readRDS(file.path( rda_path, "model_rmses.rda"))
   
 ```
-A final model was fitted on the entire edx dataset to create the final user and movies biases using the optimized lambda of ``` final_model_info[1,2]`. The following tables show samples of the final user and movie biases.
+A final model was fitted on the entire edx dataset to create the final user and movies biases using the optimized lambda of ```r final_model_info[1,2]```. The following tables show samples of the final user and movie biases.
 
 ```{r final_user_effects }
   readRDS(file.path( rda_path, "final_user_effects.rda")) %>% head(n=15) %>% 
@@ -715,12 +715,12 @@ A final model was fitted on the entire edx dataset to create the final user and 
   
 ```
 
-These biases (effects) were then applied to the validation set to make final predictions.The final rmse on the validation is ```r final_model_info[3,2]`.
+These biases (effects) were then applied to the validation set to make final predictions.The final rmse on the validation is ```r final_model_info[3,2]```.
 
 \newpage
 
 ## Conclusion
-In this analysis, I trained the model described in our course textbook by applying cross validation to get best best lambda. I was able to get a good rmse ( ```r final_model_info[3,2]`  ) without overfitting. Even though the model performance is pretty good, improvement could be achieved by including the genres, rating timestamp, and release dates as features in the prediction. Also other methods like PCA and SVD could be used to add more residuals to the model to improve it. 
+In this analysis, I trained the model described in our course textbook by applying cross validation to get best best lambda. I was able to get a good rmse, ```r final_model_info[3,2]``` without overfitting. Even though the model performance is pretty good, improvement could be achieved by including the genres, rating timestamp, and release dates as features in the prediction. Also other methods like PCA and SVD could be used to add more residuals to the model to improve it. 
 
 \newpage
 
@@ -740,9 +740,9 @@ git clone https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens
 4. select all and Run   
 
 Executing the scripts attached to the submission  
-If you decide not to clone the repo and instead jut to run file attached in the submission, follow the steps:  
-1. download the attached file to your preferred location  
-2. in the same location where you copied the file, create a folder called rda, the script requires it  
+If you decide not to clone the repo and instead just to run the files attached in the submission, follow the steps:  
+1. download the attached files to your preferred location  
+2. in the same location where you copied the files, create a folder called rda, the script requires it  
 3. go to RStudio and navigate to your folder  
 4. open the movielens.R script  
 5. select all and Run  
