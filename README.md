@@ -68,7 +68,6 @@ Before exploring, I ask a few questions that I attempt to answer using the data.
 The following table shows the total number of records, the total number of users, number of movies in both the training and validation datasets.  
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-1.PNG?raw=true)
 
-
 ### Null Values
 A simple query to the training dataframe shows that there are no null (NA) values in either the edx or validation datasets. This is good news since we don't need to exclude any invalid data.
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.PNG?raw=true)
@@ -79,7 +78,50 @@ Using the unique() and the summary() functions, we see that overall there are te
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
 
 
-## Distribution
+### User ratings distribution
 The movie rating distribution can be visualized using a simple histogram.   
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution-code.PNG?raw=true)
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution.PNG?raw=true)
+
+
+
+### Variations in users' ratings and behavior 
+We know from experience that users exhibit different behaviors when it comes to rating items, whether it's movies, items purchased or whatever. For some users, ratings movies may be habitual, meaning they rate almost every movie they watch, others rate only those movies they like, while others only rate movies they really hated just to warn other people. Of course, there are some users who don't rate at all. 
+
+Among users who make the effort to rate movies, some are very generous and give every movie a 5 star rating, others may give a poor or average rating to every movie. These differences are called biases; the exact reasons for these biases are not known, buts it's important to be aware of them when making predictions about how users may rate future movies. 
+
+
+### Most Active Users vs Least Active Users
+I have selected top ten most active users and ten least active users by number of rating and shown in the table. From the table, we see a huge difference in the number of movies rated between the two groups with most active users in thousands while least active users in tens. There is also a difference in average ratings with some of the least active users having even higher averages than active users. This is important to note because users with few ratings may be outliers and can affect our predictions. 
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/most-active-least-active-users.PNG?raw=true)
+
+### Most rated movies
+To get an idea of most rated movies based on average rating, I exclude movies that have received less than 50 ratings. This provides a better view of what users think are the best movies. The table below lists the top 10 movies by average ratings. 
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/most-rated-movies.PNG?raw=true)
+
+### Some users give higher ratings than others 
+As an illustration, I selected four random movies, two users who have watched all four movies, and observed their rating. See the table and table and chart below. From the figures, user __18__ gives higher ratings to all four movies than user __8__.
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/some-users-rate-higher-than-others.PNG?raw=true)
+
+### Movie Genres
+Movie genres can also influence movie ratings. Some people like Action movies while others like Comedy. As mentioned in the Data Wrangling section, the genres have been broken down into columns representing the individual genres. The following table shows the frequency of each genre in the edx dataset. 
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/genre-distribution.PNG?raw=true)
+
+
+## Machine Learning - Model, Approach, and Analysis
+he model used in this analysis will be based on the linear model described in the course work^[Irizarry, Rafael A., (2021), Introduction to Data Science Data Analysis and Prediction Algorithms with R, Chapter 34, Section 34.7 - Recommendation systems. https://rafalab.github.io/dsbook/large-datasets.html#recommendation-systems/]. This model trains an algorithm using user and movie effects (biases). 
+
+
+The main steps are outlined below and also shown the subsequent figure following the steps.
+
+0. the data is first partitioned into edx and validation sets
+1. from the edx dataset, set aside 10% for testing during the training phase
+2. the remaining 90% will be used in cross validation; on the remaining 90%, use 10-fold cross validation to create train/test sets (cross validation train/test pairs)
+3. on each cv train/test, calculate the biases, calculate rmse across the given set of lambda values
+4. find the _"best"_ lambda from each cv from step 3
+5. average all the _"best"_ lambdas to obtain best final _best_lambda_
+6. fit a final model by computing all the biases on the entire edx dataset using _best_lambda_ from step 5
+7. use the final model from step 6, and apply it to final validation set to make final predictions
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/modeling_approach-orig.PNG?raw=true)
+
+[[view entire report...]](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/report.pdf)
