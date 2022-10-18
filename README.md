@@ -75,3 +75,9 @@ A simple query to the training dataframe shows that there are no null (NA) value
 Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of ```r min(edx$rating) ``` and max of ```r max(edx$rating) ```. No rating of zero (0) is given. The overall mean for movie rating is ```r round(mean(edx$rating),2) ```, with a median of ```r median(edx$rating) ```. This means most users seem to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
 
 ![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
+
+
+## Distribution
+The movie rating distribution can be visualized using a simple histogram.   
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution-code.PNG?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution.PNG?raw=true)
