@@ -30,12 +30,17 @@ To begin the analysis, the movielens data is downloaded and unzipped. There are 
   A quick peek at the __movies.dat__ shows that the file is a delimeted with double colon (::) as the separator. Each line is unique movie having the movieId, the title, and the list of genres for that movie. Notice that the genre is also a delimeted string with | as the separator.   
 
 ![movies dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies_record_structure.PNG?raw=true)
+<br/>  
+<br/>  
+![movies dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies.PNG?raw=true)
 
 **ratings.dat**   
   The next file in the downloaded zip is the __ratings.dat__. This file contains each rating a user has given a movie. Again this is a delimited file with :: as the separator. Each line contains userId, the movieId, the rating that was provided, and the timestamp.   
 \newpage
 
 ![data dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings_record_structure.PNG?raw=true)
+  
+![data dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings.PNG?raw=true)
 
 ## Data Wrangling
 In the dataset, each rating is an observation, therefore the data in the _ratings.dat_ is joined with the dataset in the _movies.dat_. After some data wrangling, the resulting data looks as below. All features are converted to the appropriate types. For instance, the movieId and userId must be converted from character to numeric. The movie title and genres by default might be loaded as factors; they are converted to characters. The following table shows a sample of the data after initial wrangling.      
