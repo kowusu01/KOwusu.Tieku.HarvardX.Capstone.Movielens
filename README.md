@@ -37,19 +37,19 @@ To begin the analysis, the movielens data is downloaded and unzipped. There are 
 
 **ratings.dat**   
   The next file in the downloaded zip is the __ratings.dat__. This file contains each rating a user has given a movie. Again this is a delimited file with :: as the separator. Each line contains userId, the movieId, the rating that was provided, and the timestamp.   
-\newpage
 
-![data dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings_record_structure.PNG?raw=true)
+
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings_record_structure.PNG?raw=true)
   
-![data dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_ratings.PNG?raw=true)
 
 ## Data Wrangling
 In the dataset, each rating is an observation, therefore the data in the _ratings.dat_ is joined with the dataset in the _movies.dat_. After some data wrangling, the resulting data looks as below. All features are converted to the appropriate types. For instance, the movieId and userId must be converted from character to numeric. The movie title and genres by default might be loaded as factors; they are converted to characters. The following table shows a sample of the data after initial wrangling.      
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data.PNG?raw=true)
 
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data-table.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data-table.PNG?raw=true)
 
 
 ## Data Exploratory
@@ -64,20 +64,20 @@ Before exploring, I ask a few questions that I attempt to answer using the data.
 * What is the overall rating average for all movies? What are the average rating per movie and per user?
 
 The following table shows the total number of records, the total number of users, number of movies in both the training and validation datasets.  
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-1.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-1.PNG?raw=true)
 
 
 ### Null Values
 A simple query to the training dataframe shows that there are no null (NA) values in either the edx or validation datasets. This is good news since we don't need to exclude any invalid data.
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.PNG?raw=true)
 
 ### Overall Mean, Median
 Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of ```r min(edx$rating) ``` and max of ```r max(edx$rating) ```. No rating of zero (0) is given. The overall mean for movie rating is ```r round(mean(edx$rating),2) ```, with a median of ```r median(edx$rating) ```. This means most users seem to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
 
 
 ## Distribution
 The movie rating distribution can be visualized using a simple histogram.   
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution-code.PNG?raw=true)
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution-code.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/rating-distribution.PNG?raw=true)
