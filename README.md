@@ -1,16 +1,9 @@
 
-
-# Movie Recommendation with R  - a Machine Learning Task
+## Movie Recommendation with R  - a Machine Learning Task
 ## Predicting Movie Ratings using Biases
 
-## KOwusu.Tieku.HarvardX.Capstone.Movielens
 ### By Kwaku Owusu-Tieku
-
-### Originally Published: March 2022  
-
 Please submit comments to engineer.zkot2@gmail.com
-
-![alt text](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/splash-full.png?raw=true)
 
   
 [[view entire report...]](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/report.pdf)
@@ -47,10 +40,10 @@ To begin the analysis, the movielens data is downloaded and unzipped. There are 
 ## Data Wrangling
 In the dataset, each rating is an observation, therefore the data in the _ratings.dat_ is joined with the dataset in the _movies.dat_. After some data wrangling, the resulting data looks as below. All features are converted to the appropriate types. For instance, the movieId and userId must be converted from character to numeric. The movie title and genres by default might be loaded as factors; they are converted to characters. The following table shows a sample of the data after initial wrangling.      
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data.png?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data.PNG?raw=true)
 
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data-table.png?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/sample_data-table.PNG?raw=true)
 
 
 ## Data Exploratory
@@ -65,14 +58,14 @@ Before exploring, I ask a few questions that I attempt to answer using the data.
 * What is the overall rating average for all movies? What are the average rating per movie and per user?
 
 The following table shows the total number of records, the total number of users, number of movies in both the training and validation datasets.  
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-1.png?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-1.PNG?raw=true)
 
 
 ### Null Values
 A simple query to the training dataframe shows that there are no null (NA) values in either the edx or validation datasets. This is good news since we don't need to exclude any invalid data.
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.png?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.PNG?raw=true)
 
 ### Overall Mean, Median
 Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of ```r min(edx$rating) ``` and max of ```r max(edx$rating) ```. No rating of zero (0) is given. The overall mean for movie rating is ```r round(mean(edx$rating),2) ```, with a median of ```r median(edx$rating) ```. This means most users seem to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
 
-![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.png?raw=true)
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
