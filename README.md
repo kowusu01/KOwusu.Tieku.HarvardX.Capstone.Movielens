@@ -105,6 +105,10 @@ As an illustration, I selected four random movies, two users who have watched al
 
 ### Movie Genres
 Movie genres can also influence movie ratings. Some people like Action movies while others like Comedy. As mentioned in the Data Wrangling section, the genres have been broken down into columns representing the individual genres. The following table shows the frequency of each genre in the edx dataset. 
+  
+  
+From the table and the graph below, it can be seen that Drama and Comedy are the most frequent genres in the dataset than any other genre. Genres such as Western, Film Noir, and Documentary are less common.   
+<br/>
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/genre-distribution.PNG?raw=true)
 
 
