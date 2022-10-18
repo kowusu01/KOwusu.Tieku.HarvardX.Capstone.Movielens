@@ -1,49 +1,80 @@
-# Movie Recommendation as a Machine Learning Task
+https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/XXXXXXX.png
+
+
+[[view entire report...]](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/report.pdf)
+
+
+# Movie Recommendation with R  - a Machine Learning Task
+## Predicting Movie Ratings using Biases
+
 ## KOwusu.Tieku.HarvardX.Capstone.Movielens
 ### By Kwaku Owusu-Tieku
+
+### Originally Published: March 2022  
+
 Please submit comments to engineer.zkot2@gmail.com
 
 ![alt text](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/splash-full.png?raw=true)
 
 
-### Introduction 
-This project was submitted as part of a requirement for HarvardX - PH125.9x -  Professional Certificate in Data Science program offered by Harvard University via online (edx.com).  PH125.9x is the last course in a nine-part program leading to the certificate.
+
+## Introduction
+
+Recommendation systems are used by companies such as Netflix, Amazon, and other large online retailers to suggest items for users based on some parameters. For instance, items can be suggested to users based on popularity.  
+
+In the case of movie recommendation, we could assume that a user might like a movie simply because many people like that movie.  In other cases we could analyze user profiles for attributes such as gender, age group, etc. to find similarities among users and recommend items based on their similarities. For instance, we might recommend Horror movies to males if our analysis reveal that males tend to watch more Horror movies than females. 
+
+In our dataset, we have a selected number of users and a set of movies. Not all users have watched or rated every movie. In fact, no single user has rated every movie. The challenge here is to assign (predict) ratings to movies that a user has not rated. The assumption here is that a higher rating means the user liked the movie. Therefore, if our prediction assigns a high rating to a movie for a user, we take that to mean the user will most likely like that movie, hence, we can recommend that movie to the user.
+
+This project presents a movie recommendation system that can be used for predicting movie ratings.
+
+## The Dataset
+The dataset used in this project is the ml-10m.zip containing 10million records. This dataset can be found at http://files.grouplens.org/datasets/movielens/ml-10m.zip.
+As per standard data science practice, the data has been partitioned into training (the edx set), and hold-out (validation set). All training and tuning will be peformed on the edx set.
+
+## Quick Glance at the Dataset
+To begin the analysis, the movielens data is downloaded and unzipped. There are two important files in this download - movies.dat and ratings.dat. These files can be viewed using any standard text viewer.
+
+**movies.dat**   
+  A quick peek at the __movies.dat__ shows that the file is a delimeted with double colon (::) as the separator. Each line is unique movie having the movieId, the title, and the list of genres for that movie. Notice that the genre is also a delimeted string with | as the separator.   
+
+![movies dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/raw_data_movies_record_structure.png?raw=true)
+
+**ratings.dat**   
+  The next file in the downloaded zip is the __ratings.dat__. This file contains each rating a user has given a movie. Again this is a delimited file with :: as the separator. Each line contains userId, the movieId, the rating that was provided, and the timestamp.   
+\newpage
+
+![data dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/raw_data_ratings_record_structure.png?raw=true)
+
+## Data Wrangling
+In the dataset, each rating is an observation, therefore the data in the _ratings.dat_ is joined with the dataset in the _movies.dat_. After some data wrangling, the resulting data looks as below. All features are converted to the appropriate types. For instance, the movieId and userId must be converted from character to numeric. The movie title and genres by default might be loaded as factors; they are converted to characters. The following table shows a sample of the data after initial wrangling.      
+
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/sample_data.png?raw=true)
 
 
-Under this repo, you will find the entire code (R script), the Rmd file (for generating a reproducible report), and finally the pdf report detailing the entire process, approach, and results.
-
-### Executing the Project
-
-The easiest way to execute the script is to clone the repo and use RStudio. When you clone the repo, you will get the entire folder structure needed to execute the scripts.
-
-At minimum, you should have the following files shown below:
-  
-    - movielens.R - this is the main script for the analysis
-    - report.Rmd - this is the source file for the report
-    - rda - this folder contains generated or wrangled data files the report relies on 
-
-Note:   
-This project was developed and tested in Windows.  It has not been tested under any other operating system.  
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/sample_data-table.png?raw=true)
 
 
-Cloning from github  
-1. clone the repo   
-git clone https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens  
-2. go to RStudio and navigate to the project folder, open the project in RStudio.  
-3. open the movielens.R script  
-4. select all and Run   
+## Data Exploratory
+This section presents some of the data exploratory performed in the project to gain understanding of the general properties of the data.
 
-Executing the scripts attached to the submission  
-If you decide not to clone the repo and instead juSt to run file attached in the submission, follow the steps:  
-1. download the attached file to your preferred location  
-2. in the same location where you copied the file, create a folder called rda, the script requires it  
-3. go to RStudio and navigate to your folder  
-4. open the movielens.R script  
-5. select all and Run  
+Before exploring, I ask a few questions that I attempt to answer using the data. 
+
+* For instance, what are the patterns in the user rating? 
+* What are the top most rated movies?
+* Who are the most active users in terms of number of rating?
+* Do some people just give 5-star rating to every movie and others just rating every movie poorly?
+* What is the overall rating average for all movies? What are the average rating per movie and per user?
+
+The following table shows the total number of records, the total number of users, number of movies in both the training and validation datasets.  
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/data-exploratory-1.png?raw=true)
 
 
-### how to execute Report
- Note the report depends on files create from the analysis,  It looks for files in the rda folder.  
-1. locate the report.Rmd is located under the same folder.  
-2. click on the knit icon at the toolbar to execute. the final report (report.pdf) will be generated in the same folder.
+### Null Values
+A simple query to the training dataframe shows that there are no null (NA) values in either the edx or validation datasets. This is good news since we don't need to exclude any invalid data.
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/data-exploratory-null-values.png?raw=true)
 
+### Overall Mean, Median
+Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of ```r min(edx$rating) ``` and max of ```r max(edx$rating) ```. No rating of zero (0) is given. The overall mean for movie rating is ```r round(mean(edx$rating),2) ```, with a median of ```r median(edx$rating) ```. This means most users seem to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
+
+![sample movie data](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/data-exploratory-mean-median.png?raw=true)
