@@ -29,11 +29,13 @@ To begin the analysis, the movielens data is downloaded and unzipped. There are 
 **movies.dat**   
   A quick peek at the __movies.dat__ shows that the file is a delimeted with double colon (::) as the separator. Each line is unique movie having the movieId, the title, and the list of genres for that movie. Notice that the genre is also a delimeted string with | as the separator.   
 
-<br/>
-![movies dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies_record_structure.PNG?raw=true)
+<br/>  
+  
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies_record_structure.PNG?raw=true)
+  
 <br/>  
 
-![movies dataset structure](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies.PNG?raw=true)
+![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/raw_data_movies.PNG?raw=true)
 
 **ratings.dat**   
   The next file in the downloaded zip is the __ratings.dat__. This file contains each rating a user has given a movie. Again this is a delimited file with :: as the separator. Each line contains userId, the movieId, the rating that was provided, and the timestamp.   
