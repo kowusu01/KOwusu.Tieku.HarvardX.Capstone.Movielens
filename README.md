@@ -73,7 +73,7 @@ A simple query to the training dataframe shows that there are no null (NA) value
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-null-values.PNG?raw=true)
 
 ### Overall Mean, Median
-Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of ```r min(edx$rating) ``` and max of __0.5__. No rating of zero (0) is given. The overall mean for movie rating is __3.51__, with a median of __4__. This means most users tend to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
+Using the unique() and the summary() functions, we see that overall there are ten unique ratings, given by users with a minimum of __0.5__ and max of __5.0__. No rating of zero (0) is given. The overall mean for movie rating is __3.51__, with a median of __4__. This means most users tend to be generous and give pretty high ratings with __4.0__ being the most predominant rating.
 
 ![](https://github.com/kowusu01/KOwusu.Tieku.HarvardX.Capstone.Movielens/blob/main/images/data-exploratory-mean-median.PNG?raw=true)
 
